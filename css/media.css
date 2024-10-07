@@ -4,7 +4,9 @@
         flex-direction: column;
     } */
     .steps{
-        margin-top: 800px;
+        margin-top: 1100px;
+        margin-bottom: 0px;
+        padding: 20px 0px;
     }
 }
 @media (max-width: 500px) {
@@ -74,10 +76,231 @@
         width: 100%;
         padding-left: 0px;
     }
-    /* .support-session-text{
-       margin-top: 400px;
-       width: 100%; 
-    } */
+    .support-session-text{
+      width: 100%;
+      margin-top: 410px;
+    }
+    .grid-chart{
+      grid-template-columns: 100%;
+    }
+    .grid-chart__el{
+      padding: 12px 0px;
+    }
+    .grid-chart__el:nth-child(odd){
+      border: none;
+    }
+    .grid-chart__el:nth-child(even){
+      border-bottom: 2px solid #ccc;
+      padding: 0px 0px 16px 0px;
+    }
+    .grid-chart__el_mobile{
+      display: block;
+      max-width: max-content;
+    }
+    .grid-chart__el:nth-last-child(-n + 2){
+      padding-bottom: 13px;
+    }
+    .grid-chart__el:nth-child(8){
+      display: none;
+    }
+    .grid-chart__el:nth-child(7){
+      border-bottom: 2px solid #ccc;
+    }
+    .grid-chart__el:nth-child(7):after{
+      content: "50 коп.";
+      font-weight: 600;
+      padding-left: 10px;
+      color: #000;
+    }
+    .slider-container{
+      padding-top: 135px;
+      height: 780px;
+    }
+    .controls{
+      position: relative;
+      bottom: 180px;
+      justify-content: center;
+    }
+    .header span{
+      font-size: 36px;
+    }
+    .steps__title{
+      font-size: 36px;
+      width: 100%;
+      margin-left: 18px;
+    }
+    .steps-container.flex-r{
+      flex-direction: column;
+      align-items: start;
+    }
+    .steps__title_subtitle{
+      width: 100%;
+      margin-left: 0px;
+    }
+    .footer-text.container{
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-bottom: 60px;
+    }
+    .footer{
+      height: 214px;
+    }
+    .tickers{
+      display: block;
+      z-index: 9999;
+        position: relative;
+        margin-top: 63px;
+    }
+    .top-banner {
+      height: 375px;
+      bottom: 105px;
+      left: -498px;
+      position: absolute;
+      z-index: 0;
+      width: unset;
+      object-fit: unset;
+      object-position: unset;
+      max-width: unset;
+      top: unset;
   }
+  .banner-block__title{
+    font-size: 36px;
+  }
+  .banner-block{
+    width: 88vw;
+    top: 24px;
+  }
+  header{
+    background-image: url(/img/brown-background.png);
+  }
+  .banner.container{
+    padding-right: 0px;
+    padding-left: 26px;
+    background-image: url(/img/brown-background.png);
+  }
+  .banner-buttons{
+    flex-direction: column;
+  }
+  .banner-buttons a{
+    width: 90vw;
+    padding: 15px 26px 15px 26px;
+  }
+  .logo-container.container{
+    padding-left:29px;
+  }
+  .banner-block__desc{
+    text-align: left;
+  }
+.top-banner {
+  clip-path: inset(0px 156px 0px 0px);
+}
+  }
+.mobile-slider {
+  display: none;
+}
+@media (max-width: 767px) {
+  .grid-table {
+      display: none;
+  }
+}
+.mobile-slider {
+  display: none;
+  position: relative;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  .mobile-slider {
+      display: block;
+  }
+  .grid-item{
+    text-align: left;
+    font-family: "Golos Text", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .slider-wrapper {
+    display: flex;
+    margin-bottom: 60px;
+    transition: transform 0.5s ease;
+  }
+  .grid-item{
+    background-image: unset;
+    box-shadow: unset;
+  }
+  .mobile-slider .slide {
+    flex: 0 0 100%;
+    display: none; 
+  }
+  
+  .slide.active {
+    min-height: 336px;
+    display: block;
+  }
+  .slide.active::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px; 
+    right: 20px;
+    bottom: 75px;
+    background-image: url('/img/steps-background.png');
+    background-size: cover; 
+    background-position: center;
+    z-index: 0;
+}
+  .prev-slide, .next-slide {
+    position: absolute;
+    bottom: 10px; 
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none; 
+    padding: 10px 20px;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  .prev-slide {
+    left: 10px;
+  }
+  
+  .next-slide {
+    right: 10px;
+  }
+  
+  
+  .pagination {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+  }
+  
+  .pagination span {
+    width: 10px;
+    height: 10px;
+    background-color: gray;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .pagination .active {
+    background-color: black;
+  }
+  .slider .slide{
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
   
   

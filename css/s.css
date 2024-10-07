@@ -442,3 +442,6 @@ footer .footer-text span{
 .footer-text{
   padding-top: 40px;
 }
+.grid-chart__el_mobile{
+  display: none;
+}

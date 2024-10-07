@@ -12,7 +12,7 @@ function createGridTable(data) {
         const airplane = document.createElement('img');
         airplane.src = 'img/steps-air.png';
         airplane.alt = 'Самолет';
-        airplane.classList.add('airplane-image'); // Добавляем класс для стилизации
+        airplane.classList.add('airplane-image');
         gridItem.appendChild(airplane);
       }
   
@@ -32,7 +32,7 @@ function createGridTable(data) {
   fetch('data.json')
   .then(response => response.json())
   .then(data => {
-    createGridTable(data); // Вызов функции для создания таблицы
+    createGridTable(data);
   })
   .catch(error => console.error('Ошибка загрузки данных:', error));
   

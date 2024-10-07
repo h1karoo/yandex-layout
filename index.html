@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/media.css">
     <script src="js/grid-table.js"></script>
     <script src="js/slider.js"></script>
+    <script src="js/mobile-slider.js"></script>
     <title>Yandex_layout</title>
 </head>
 <body>
@@ -20,7 +21,9 @@
             </div>
         </div>
     </header>
-    <img src="/img/top-banner.png" alt="Баннер" class="top-banner">
+    <div class="banner-container">
+        <img src="/img/top-banner.png" alt="Баннер" class="top-banner">
+    </div>
     <div class="banner container">
         <div class="banner-block">
             <div class="banner-block__title flex-c">
@@ -115,16 +118,18 @@
                 </div>
             </span>
         </div>
+        <div class="mobile-slider" id="mobileSlider">
+            <div class="slider-wrapper">
+            </div>
+            <button class="prev-slide">Назад</button>
+            <button class="next-slide">Вперед</button>
+            <div class="pagination"></div>
+        </div>
         <div class="grid-table" id="gridTable"></div>
     </div>
     <div class="slider-container container">
         <div class="header">
             <span>УЧАСТНИКИ ТУРНИРА</span>
-            <div class="controls">
-                <button id="prevBtn">❮</button>
-                <div id="slideCounter"></div>
-                <button id="nextBtn">❯</button>
-            </div>
         </div>
         <div class="slider">
             <div class="slide">
@@ -163,6 +168,11 @@
                 <div class="slide-subtitle">Гроссмейстер</div>
                 <button class="details-btn">Подробнее</button>
             </div>
+        </div>
+        <div class="controls">
+            <button id="prevBtn">❮</button>
+            <div id="slideCounter"></div>
+            <button id="nextBtn">❯</button>
         </div>
     </div>
     <div class="tickers">
