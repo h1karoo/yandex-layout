@@ -30,7 +30,6 @@ header{
 }
 .logo-container .logo-wrapper{
     position: relative;
-    /* top: 26px; */
     height: 36px;
     width: 245.17px;
 }
@@ -326,7 +325,6 @@ header{
     top: -95px;
     pointer-events: none;
   }
-/* sad */
 .slider-container {
   padding: 0px;
   position: relative;
@@ -370,7 +368,6 @@ header{
   box-sizing: border-box;
   padding: 20px;
   text-align: center;
-  background: #f8f8f8;
   border-radius: 10px; 
   display: flex;
   flex-direction: column;
@@ -400,11 +397,15 @@ header{
   margin-top: 10px;
   padding: 10px 20px;
   border: none;
-  background: #007bff; 
+  background: #fff; 
   color: #fff;
   cursor: pointer;
-  border-radius: 5px; 
+  border-radius: 27px; 
   transition: background 0.3s;
+  color: #3057A2;
+  border: 1px solid #3057A2;
+  font-family: "Golos Text", sans-serif;
+  font-size: 16px;
 }
 
 .details-btn:hover {
@@ -441,7 +442,18 @@ footer .footer-text span{
 }
 .footer-text{
   padding-top: 40px;
+  color: #313131;
 }
 .grid-chart__el_mobile{
   display: none;
+}
+.ticker__head_separator{
+  bottom: -5px;
+  left: 5px;
+  position: relative;
+  font-size: 13px;
+}
+.tickers-second{
+  position: relative;
+  top: 5px;
 }

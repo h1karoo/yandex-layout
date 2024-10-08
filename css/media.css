@@ -1,14 +1,3 @@
-@media (max-width: 375px) {
-    /* .container{padding-left: 10px;padding-right: 10px;} */
-    /* .support-session{
-        flex-direction: column;
-    } */
-    .steps{
-        margin-top: 1100px;
-        margin-bottom: 0px;
-        padding: 20px 0px;
-    }
-}
 @media (max-width: 500px) {
     .support-block.container{padding-left: 10px;padding-right: 10px;margin-top:48px;}
     .support-idea__desc {
@@ -18,7 +7,12 @@
       text-align: center;
       width: 100%;
       padding-top:0px;
-    }  
+    }
+    .steps{
+      margin-top: 1100px;
+      margin-bottom: 0px;
+      padding: 20px 0px;
+  }  
     .support-idea__desc_red {
       color: #e64a19;
       font-weight: bold;
@@ -118,7 +112,8 @@
     }
     .controls{
       position: relative;
-      bottom: 180px;
+      top: 596px;
+      left: 12px;
       justify-content: center;
     }
     .header span{
@@ -153,7 +148,6 @@
     }
     .top-banner {
       height: 375px;
-      bottom: 105px;
       left: -498px;
       position: absolute;
       z-index: 0;
@@ -175,7 +169,7 @@
   }
   .banner.container{
     padding-right: 0px;
-    padding-left: 26px;
+    padding-left: 17px;
     background-image: url(/img/brown-background.png);
   }
   .banner-buttons{
@@ -186,13 +180,27 @@
     padding: 15px 26px 15px 26px;
   }
   .logo-container.container{
-    padding-left:29px;
+    padding-left:19px;
   }
   .banner-block__desc{
     text-align: left;
   }
 .top-banner {
-  clip-path: inset(0px 156px 0px 0px);
+}
+.banner-container {
+  width: 100%;
+  height: 375px;
+  overflow: hidden;
+  position: absolute;
+  top: 388px;
+}
+
+.top-banner {
+  max-height: 375px;
+}
+.banner-buttons a:last-child{
+  background-color: #ffffffd9;
+  border: none;
 }
   }
 .mobile-slider {
@@ -242,7 +250,7 @@
     top: 20px;
     left: 20px; 
     right: 20px;
-    bottom: 75px;
+    bottom: 15px;
     background-image: url('/img/steps-background.png');
     background-size: cover; 
     background-position: center;
@@ -251,25 +259,27 @@
   .prev-slide, .next-slide {
     position: absolute;
     bottom: 10px; 
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: #313131;
     border: none; 
-    padding: 10px 20px;
+    padding: 10px 16px;
     cursor: pointer;
     z-index: 10;
+    color: #fff;
+    border-radius: 25px;
   }
   
   .prev-slide {
-    left: 10px;
+    left: 87px;
   }
   
   .next-slide {
-    right: 10px;
+    right: 86px;
   }
   
   
   .pagination {
     position: absolute;
-    bottom: 50px;
+    bottom: 24px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;

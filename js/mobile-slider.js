@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const sliderWrapper = document.querySelector('.slider-wrapper');
     const paginationContainer = document.querySelector('.pagination');
     let slides = [];
+    let currentSlide = 0;
 
     function createSlider(data) {
         sliderWrapper.innerHTML = '';
@@ -18,7 +19,17 @@ document.addEventListener('DOMContentLoaded', function () {
         slideGroups.forEach((slideGroup, index) => {
             const slide = document.createElement('div');
             slide.classList.add('slide');
-            if (index === 0) slide.classList.add('active'); 
+            slide.style.position = 'absolute';
+            slide.style.top = 0;
+            slide.style.left = 0;
+            slide.style.width = '100%';
+
+            if (index === 0) {
+                slide.classList.add('active');
+                slide.style.visibility = 'visible';
+            } else {
+                slide.style.visibility = 'hidden';
+            }
 
             slideGroup.forEach(item => {
                 const gridItem = document.createElement('div');
@@ -37,7 +48,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 slide.appendChild(gridItem);
             });
 
-
             sliderWrapper.appendChild(slide);
             slides.push(slide);
 
@@ -49,22 +59,21 @@ document.addEventListener('DOMContentLoaded', function () {
             paginationContainer.appendChild(paginationDot);
         });
 
-
         updateSliderHeight();
+        updateButtonStates();
     }
 
-
     function goToSlide(slideIndex) {
+        currentSlide = slideIndex
         slides.forEach((slide, index) => {
             if (index === slideIndex) {
                 slide.classList.add('active');
-                slide.style.display = 'block';
+                slide.style.visibility = 'visible'; 
             } else {
                 slide.classList.remove('active');
-                slide.style.display = 'none';
+                slide.style.visibility = 'hidden';
             }
         });
-
 
         const paginationDots = paginationContainer.children;
         for (let i = 0; i < paginationDots.length; i++) {
@@ -75,22 +84,26 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
-
         updateSliderHeight();
-        updateButtonStates();
+        updateButtonStates(); 
     }
-
 
     function updateSliderHeight() {
         const activeSlide = slides.find(slide => slide.classList.contains('active'));
-        document.querySelector('.mobile-slider').style.height = `${slideHeight}px`; 
+        if (activeSlide) {
+            const slideHeight = activeSlide.offsetHeight; 
+            sliderWrapper.style.height = `${slideHeight}px`; 
+        }
     }
-
 
     function updateButtonStates() {
         const prevButton = document.querySelector('.prev-slide');
         const nextButton = document.querySelector('.next-slide');
 
+        if (!prevButton || !nextButton) {
+            console.error('Кнопки переключения не найдены.');
+            return;
+        }
         if (currentSlide === 0) {
             prevButton.classList.add('disabled');
         } else {
@@ -103,10 +116,6 @@ document.addEventListener('DOMContentLoaded', function () {
             nextButton.classList.remove('disabled');
         }
     }
-
-
-    let currentSlide = 0;
-
 
     document.querySelector('.prev-slide').addEventListener('click', () => {
         if (currentSlide > 0) { 
@@ -121,11 +130,12 @@ document.addEventListener('DOMContentLoaded', function () {
             goToSlide(currentSlide);
         }
     });
+
     fetch('data.json')
         .then(response => response.json())
         .then(data => {
             createSlider(data);
-            updateButtonStates(); 
+            updateButtonStates();
         })
         .catch(error => console.error('Ошибка загрузки данных:', error));
 });

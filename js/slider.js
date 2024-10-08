@@ -10,11 +10,10 @@ document.addEventListener('DOMContentLoaded', function () {
     let slidesToShow = 3;
     const gap = 20;
 
-    // Определение количества слайдов для показа на разных экранах
     function setSlidesToShow() {
-        if (window.innerWidth <= 768) { // Для мобильных устройств
+        if (window.innerWidth <= 768) { 
             slidesToShow = 1;
-        } else { // Для десктопов
+        } else { 
             slidesToShow = 3;
         }
         updateSlideDimensions();
@@ -74,7 +73,6 @@ document.addEventListener('DOMContentLoaded', function () {
         updateCounter();
     }
 
-    let slideInterval = setInterval(nextSlide, 4000);
 
     function stopSlideShow() {
         clearInterval(slideInterval);
@@ -96,9 +94,9 @@ document.addEventListener('DOMContentLoaded', function () {
         startSlideShow();
     });
 
-    window.addEventListener('resize', setSlidesToShow); // Обновление количества слайдов при изменении размера окна
+    window.addEventListener('resize', setSlidesToShow);
 
-    setSlidesToShow(); // Установка начальных значений при загрузке
+    setSlidesToShow(); 
     updateCounter();
     updateSlidePosition();
     startSlideShow();
