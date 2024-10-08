@@ -165,12 +165,12 @@
     top: 24px;
   }
   header{
-    background-image: url(/img/brown-background.png);
+    background-image: url(img/brown-background.png);
   }
   .banner.container{
     padding-right: 0px;
     padding-left: 17px;
-    background-image: url(/img/brown-background.png);
+    background-image: url(img/brown-background.png);
   }
   .banner-buttons{
     flex-direction: column;
@@ -251,7 +251,7 @@
     left: 20px; 
     right: 20px;
     bottom: 15px;
-    background-image: url('/img/steps-background.png');
+    background-image: url('img/steps-background.png');
     background-size: cover; 
     background-position: center;
     z-index: 0;
